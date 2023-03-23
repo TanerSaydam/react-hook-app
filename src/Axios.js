@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {useEffect, useState} from 'react';
+import toastr from './path/toastr.min'
 
 class TodoModel{
     userId = 1;
@@ -21,6 +22,7 @@ function Axios(){
         axios.post("https://jsonplaceholder.typicode.com/todos",model).then(res=> {
             setTodos(data => [model,...data]);
             setTodo("");
+            toastr.success('Başarılı');
             // alert("Kayıt işlemi başarılı!");
             // toastr.success("Kayıt işlemi başarılı!");
         });
